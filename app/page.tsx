@@ -483,7 +483,20 @@ const Index = () => {
     setFolderDialogOpen(true);
   };
 
-  console.log("tabTrigger", tabTrigger);
+  // console.log("tabTrigger", tabTrigger);
+
+  useEffect(() => {
+    if (tabTrigger === "playlist") {
+      setPlaylistUrl("");
+      setPlaylistData(null);
+    }
+
+    if (tabTrigger === "video") {
+      setUrl("");
+      setVideoData(null);
+    }
+  }, [tabTrigger]);
+
 
 
   return (
@@ -954,25 +967,7 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* custom save location */}
-              {/* <div className="">
-                <Label className="text-sm font-medium">Save Location</Label>
-                <Input
-                  type="text"
-                  value={playlistDownloadOptions.download_path}
-                  onChange={(e) =>
-                    setPlaylistDownloadOptions((prev) => ({
-                      ...prev,
-                      download_path: e.target.value,
-                    }))
-                  }
-                  placeholder="Enter save location"
-                />
-                <Button
-                >
-                  Select Save Location
-                </Button>
-              </div> */}
+
 
               {/* custom save location */}
               {/* Enhanced Save Location Picker */}
